@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TB Detection - Upload Chest X-Ray</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 360px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #007bff;
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        p.description {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px dashed #007bff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        input[type="file"]:hover {
+            border-color: #0056b3;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 14px 0;
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Chest X-Ray Image</h2>
+        <p class="description">
+            Please upload a clear chest X-ray image in JPG or PNG format.<br />
+            The AI model will analyze the image to predict Tuberculosis (TB) presence.
+        </p>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required />
+            <input type="submit" value="Predict" />
+        </form>
+        <div class="footer">
+            <p>© 2025 TB Detection AI System. For professional use only.</p>
+        </div>
+    </div>
+</body>
+</html>
